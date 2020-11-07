@@ -1,0 +1,41 @@
+.repo-list {
+  mat-card {
+    margin-bottom: 3px;
+  }
+
+  mat-card-title {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  mat-card-footer {
+    margin: 0;
+  }
+
+  &__notify {
+    color: #fff;
+    font-size: 16px;
+  }
+
+  &__item {
+    cursor: pointer;
+  }
+
+  &__name {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  &__table {
+    tr {
+      text-align: left;
+    }
+  }
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+}

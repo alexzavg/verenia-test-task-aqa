@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background: rgba(0,0,0,.85);
+  overflow-y: scroll;
+}
+
+main {
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.app-btn {
+  min-width: 120px;
+  height: 20px;
+  border: none;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .9);
+  cursor: pointer;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.mat-spinner circle {
+  stroke: #fff !important;
+}
+
+.mat-spinner, .mat-spinner svg {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.app-form {
+  mat-form-field {
+    width: 100%;
+    .mat-form-field-infix {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__plus-ico {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,32 @@
+<main class="repo">
+  <aside>
+    <app-repositories-filters
+      (setQuery)="setQuery($event)"
+      [filters$]="filters$"
+    ></app-repositories-filters>
+  </aside>
+
+  <section>
+    <ng-container *ngIf="!(isLoading$ | async)">
+      <app-repositories-list
+        (addToFavorites)="addToFavorites($event)"
+        (removeFromFavorites)="removeFromFavorites($event)"
+        [list$]="list$"
+        [filters$]="filters$"
+        [favorites$]="favoriteRepos$"
+      ></app-repositories-list>
+
+      <ng-container *ngIf="error$ | async">
+        <span class="repo__error">{{error$ | async}}</span>
+      </ng-container>
+
+      <ng-container *ngIf="!(error$ | async) && !(list$ | async)?.length">
+        <span class="repo__empty">{{emptyMessage}}</span>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="isLoading$ | async">
+      <mat-spinner></mat-spinner>
+    </ng-container>
+  </section>
+</main>

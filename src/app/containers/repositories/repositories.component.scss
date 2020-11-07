@@ -1,0 +1,31 @@
+.repo {
+  display: flex;
+
+  aside {
+    width: 400px;
+    position: fixed;
+  }
+
+  section {
+    flex-grow: 1;
+    margin-left: 430px;
+    position: relative;
+    mat-spinner {
+      margin: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  &__error {
+    font-size: 14px;
+    color: darkred;
+  }
+
+  &__empty {
+    font-size: 14px;
+    color: white;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="repo-list" *ngIf="list$ | async as list">
+  <ng-container *ngFor="let item of list | repositoriesListFilter:(filters$ | async)">
+    <mat-card class="repo-list__item">
+      <mat-card-title>
+        <img class="repo-list__avatar" [src]="item.avatar" [alt]="item.name">
+        <span class="repo-list__name">{{item.name}}</span>
+      </mat-card-title>
+      <mat-card-content>
+        <table class="repo-list__table">
+          <tr valign="top" *ngIf="item.language"><th>Language:</th><td>{{item.language}}</td></tr>
+          <tr valign="top" *ngIf="item.stargazersCount"><th>Rating:</th><td>{{item.stargazersCount}}</td></tr>
+          <tr valign="top" *ngIf="item.description"><th>Description:</th><td>{{item.description}}</td></tr>
+          <tr valign="top" *ngIf="item.url"><th>Url:</th><td><a [href]="item.url" target="_blank">{{item.url}}</a></td></tr>
+        </table>
+      </mat-card-content>
+      <mat-card-footer>
+        <app-favorite-btn
+          (add)="addToFavorites.emit(item)"
+          (remove)="removeFromFavorites.emit(item.id)"
+          [isFavorite]="favoriteMode || checkIsFavorite(favorites$ | async, item.id)"
+        ></app-favorite-btn>
+      </mat-card-footer>
+    </mat-card>
+  </ng-container>
+</div>
