@@ -1,6 +1,4 @@
 # Oleksandr Zavhorodnii - Automation test task for Verenia
-Видео как делал:
-
 
 Тест кейс:
 1. открыть страницу http://localhost:4200/ 
